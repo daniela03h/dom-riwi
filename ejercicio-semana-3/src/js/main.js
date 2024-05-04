@@ -1,3 +1,19 @@
+const temaOscuro = () => {
+    document.querySelector("body").setAttribute("data-bs-theme", "dark");
+    document.querySelector("#dl-icon").setAttribute("class", "bi bi-sun-fill");
+}
+const temaClaro = () => {
+    document.querySelector("body").setAttribute("data-bs-theme", "light");
+    document.querySelector("#dl-icon").setAttribute("class", "bi bi-moon-fill");
+}
+const cambiarTema = () => {
+    document.querySelector("body").getAttribute("data-bs-theme") === "light" ?
+        temaOscuro() : temaClaro();
+}
+
+
+
+
 const animalesAdopcion = document.querySelector(".adopcion");
 
 mascotas.forEach((mascota) => {
@@ -15,6 +31,7 @@ mascotas.forEach((mascota) => {
             <li class="list-group-item">Peso: ${mascota.peso}</li>
             <li class="list-group-item">Estado: ${mascota.estado}</li>
             <li class="list-group-item">Dueño: ${mascota.propietario.nombrePropietario}</li>
+            <a href="#" class="btn btn-primary w-50 mx-auto my-2">Adoptame</a>
         </ul>
     </div>
 `;
